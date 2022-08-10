@@ -1,0 +1,5 @@
+  packages:
+  - package: fivetran/fivetran_log
+    version: 0.6.1
+  - package: fivetran/salesforce_formula_utils
+    version: [">=0.6.0", "<0.7.0"]
