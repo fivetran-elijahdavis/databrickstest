@@ -1,5 +1,5 @@
   SELECT
-    dt._line AS linenumber,
+    dt.linenumber,
    dt._fivetran_synced,
    case when dt.uniqueid
     not in (select
