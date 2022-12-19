@@ -1,3 +1,5 @@
+insert into fivetran-wild-west.elijah_dbt_databricks_test.deltrack (linenumber,_fivetran_synced,uniqueid,ftkey,deletedflag)
+
 SELECT
    apt._line AS linenumber,
    apt._fivetran_synced AS _fivetran_synced,
