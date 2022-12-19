@@ -1,4 +1,13 @@
-  SELECT
+  {{ config(
+    materialized='table',
+    partition_by={
+      "field": "_fivetran_synced",
+      "data_type": "timestamp",
+      "granularity": "day"
+    }
+)}}
+
+SELECT
    apt._line AS linenumber,
    apt._fivetran_synced AS _fivetran_synced,
    CONCAT(CAST(apt._line AS string),cast(apt.account_id as string),cast(apt.connection_method as string)) AS uniqueid,
