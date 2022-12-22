@@ -5,10 +5,7 @@ SELECT
    apt._fivetran_synced AS _fivetran_synced,
    CONCAT(CAST(apt._line AS string),cast(apt.account_id as string),cast(apt.connection_method as string)) AS uniqueid,
    CONCAT(CAST(apt._line AS string),cast(apt._fivetran_synced as string)) AS ftkey
-  ,Case when  (select dt.uniqueid from fivetran-wild-west.elijah_dbt_databricks_test.deltrack dt)
-    not in (select CONCAT(CAST(apt._line AS string),cast(apt.account_id as string),cast(apt.connection_method as string))FROM
-  fivetran-wild-west.elijah_onboarding_adoption_test.onboarding_and_adoption_tracker_account_checklist apt)
-    then 'Y' else 'N' end as DeletedFlag
+  , 'N' end as DeletedFlag
 
 FROM
   fivetran-wild-west.elijah_onboarding_adoption_test.onboarding_and_adoption_tracker_account_checklist apt
