@@ -1,6 +1,4 @@
----------Load audit table
 insert into fivetran-wild-west.elijah_dbt_databricks_test.deltrack (uniqueid,deletedflag)
-
 with a
 as (
 select uniqueid,deletedflag from fivetran-wild-west.elijah_dbt_databricks_test.deltrack dt
